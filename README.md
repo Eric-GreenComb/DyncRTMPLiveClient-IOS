@@ -42,9 +42,12 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准R
 
 ##商用授权
 程序发布需商用授权，业务咨询请联系
-QQ:984630262
-QQ交流群:6837127
-联系电话:021-65650071
-Email:zhangjianqiang@dync.cc
+QQ:984630262 </br>
+QQ交流群:6837127</br>
+联系电话:021-65650071</br>
+Email:zhangjianqiang@dync.cc</br>
 ##关于直播
 本公司有一整套直播解决方案，特别针对移动端。本公司开发者平台[www.anyrtc.io](http://www.anyrtc.io)。除了基于RTMP协议的直播系统外，我公司还有基于WebRTC的时时在线交互直播系统。欢迎你的来电~
+## License
+
+DyncLiveClient is available under the MIT license. See the LICENSE file for more info.
