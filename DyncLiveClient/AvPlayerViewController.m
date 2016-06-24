@@ -29,8 +29,10 @@
     
     _avplayer = [[DyncLivePlayer alloc] initWithDelegate:self];
     _avplayer.videoContentMode = VideoShowModeScaleAspectFill;
-
-    [_avplayer play:@"rtmp://192.168.199.131:1935/live1/room" withPlayerView:self.view];
+    //rtmp://live.hkstv.hk.lxdns.com/live/hks
+    //rtmp://192.168.199.130:1935/live1/room
+    //rtmp://192.168.7.207:1935/live1/room
+    [_avplayer play:@"rtmp://192.168.199.130:1935/live1/room" withPlayerView:self.view];
     
     [self.view addSubview:self.closeButton];
     __weak typeof(self)weakSelf = self;

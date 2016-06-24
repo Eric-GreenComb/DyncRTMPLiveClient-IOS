@@ -11,7 +11,7 @@
 #import "VideoConfiguration.h"
 #import <Masonry.h>
 
-@interface AvStreamerViewController ()
+@interface AvStreamerViewController ()<DyncLivePublisherDelegate>
 
 @property (nonatomic, strong) UIButton *beautyButton;
 @property (nonatomic, strong) UIButton *cameraButton;
@@ -32,6 +32,7 @@
     [super viewDidLoad];
     
     _app = [[DyncLivePublisher alloc] initWithVideoConfiguration:[VideoConfiguration defaultConfigurationForQuality:CaptureSessionPreset640x480_Hight withPosition:CaptureDevicePositionFront withDevicePosition:DeviceOrientationPortrait]];
+    _app.delegate = self;
     [_app setPreview:self.view];
     
     [self.view addSubview:self.closeButton];
@@ -59,8 +60,9 @@
         make.width.equalTo(@[@(44)]);
         make.height.equalTo(@[@(44)]);
     }];
-    
-    [_app startPublish:@"rtmp://192.168.199.131:1935/live1/room"];
+    //rtmp://192.168.7.207:1935/live1/room
+    //rtmp://192.168.199.130:1935/live1/room
+    [_app startPublish:@"rtmp://192.168.7.207:1935/live1/room"];
 
 }
 
@@ -112,6 +114,28 @@
     }
     return _beautyButton;
 }
+
+#pragma mark -  DyncLivePublisherDelegate
+- (void)OnStreamOk {
+    NSLog(@"OnStreamOk");
+}
+
+- (void)OnStreamReconnecting:(int)times {
+    NSLog(@"OnStreamReconnecting:%d",times);
+}
+
+- (void)OnStreamFailed:(int)code {
+     NSLog(@"OnStreamFailed:%d",code);
+}
+
+- (void)OnStreamClosed {
+    NSLog(@"OnStreamClosed");
+}
+
+- (void)OnStreamStatus:(int)delayMs withNetBand:(int)netBand {
+    NSLog(@"OnStreamStatus:%d withNetBand:%d",delayMs,netBand);
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

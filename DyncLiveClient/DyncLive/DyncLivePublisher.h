@@ -12,7 +12,15 @@
 NS_ASSUME_NONNULL_BEGIN
 @protocol DyncLivePublisherDelegate <NSObject>
 
--(void) onPublisherEventCallback:(NSString*)event withParmOne:(int)parmOne withParTwo:(int)parmTwo;
+- (void)OnStreamOk;
+
+- (void)OnStreamReconnecting:(int)times;
+
+- (void)OnStreamFailed:(int)code;
+
+- (void)OnStreamClosed;
+
+- (void)OnStreamStatus:(int)delayMs withNetBand:(int)netBand;
 
 @end
 

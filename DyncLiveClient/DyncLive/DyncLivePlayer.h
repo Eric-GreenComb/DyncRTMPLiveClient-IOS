@@ -52,4 +52,9 @@ typedef NS_ENUM(NSInteger,VideoShowMode){
  */
 - (void)stop;
 
+/**
+ *  改变播放的方向
+ */
+- (void)changePlayerOrientation;
+
 @end
