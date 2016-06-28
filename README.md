@@ -1,7 +1,11 @@
-#DyncLiveClient-IOS
+#DyncRTMPLiveClient-IOS
 iOS 直播（网络自适应码率RTMP publisher）、点播播放器（播放器经过专业优化，可实现秒开RTMP Player）
 ##简介
-DyncLiveClient是为移动端应用量身打造的基于RTMP协议的流媒体直播系统。通过集成本SDK，只需几个简单API调用，便可实现一套完整的直播流媒体应用基础。包含了流媒体应用中：『采集->编码->传输->解码->播放』的所有步骤。
+DyncRTMPLiveClient是为移动端应用量身打造的基于RTMP协议的流媒体直播系统。通过集成本SDK，只需几个简单API调用，便可实现一套完整的直播流媒体应用基础。包含了流媒体应用中：『采集->编码->传输->解码->播放』的所有步骤。</br>
+
+#优势</br>
+**超低延时**</br>
+**超低内存**</br>
 #SDK包含
 RTMP 推流器</br>
 RTMP 播放器</br>
@@ -19,7 +23,7 @@ RTMP 播放器</br>
 fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准RTMP协议服务端
 
 ##支持的流媒体云服务器
-[奥点云](http://www.aodianyun.com/)、[七牛](http://www.qiniu.com/)及其他标准RTMP协议云服务器
+[奥点云](http://www.aodianyun.com/)、[七牛](http://www.qiniu.com/)、[网宿](http://www.wangsucloud.com/)、[UCloud](https://www.ucloud.cn/)及其他标准RTMP协议云服务器
 
 ##直播发布特性
 * H.264/AAC 组合的RTMP协议音视频流发布
@@ -42,6 +46,8 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准R
 
 ##ipv6
 苹果2016年6月新政策规定新上架app必须支持ipv6-only。该库已经适配
+##Android版推流拉流Demo
+[DyncRTMPLiveClient-Android](https://github.com/AnyRTC/DyncRTMPLiveClient-Android)
 
 ##商用授权
 程序发布需商用授权，业务咨询请联系
@@ -53,4 +59,4 @@ Email:zhangjianqiang@dync.cc</br>
 本公司有一整套直播解决方案，特别针对移动端。本公司开发者平台[www.anyrtc.io](http://www.anyrtc.io)。除了基于RTMP协议的直播系统外，我公司还有基于WebRTC的时时交互直播系统、P2P呼叫系统、会议系统等。快捷集成SDK，便可让你的应用拥有时时通话功能。欢迎您的来电~
 ## License
 
-DyncLiveClient is available under the MIT license. See the LICENSE file for more info.
+DyncRTMPLiveClient is available under the MIT license. See the LICENSE file for more info.
