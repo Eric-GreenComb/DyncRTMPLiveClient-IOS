@@ -12,14 +12,34 @@
 NS_ASSUME_NONNULL_BEGIN
 @protocol DyncLivePublisherDelegate <NSObject>
 
+/**
+ *  发流成功
+ */
 - (void)OnStreamOk;
 
+/**
+ *  断网重连中...
+ *
+ *  @param times 次数
+ */
 - (void)OnStreamReconnecting:(int)times;
-
+/**
+ *  推流失败
+ *
+ *  @param code 失败原因（1网络问题）
+ */
 - (void)OnStreamFailed:(int)code;
 
+/**
+ *  关闭推流
+ */
 - (void)OnStreamClosed;
-
+/**
+ *  状态回调
+ *
+ *  @param delayMs 延迟时间
+ *  @param netBand 带宽大小
+ */
 - (void)OnStreamStatus:(int)delayMs withNetBand:(int)netBand;
 
 @end

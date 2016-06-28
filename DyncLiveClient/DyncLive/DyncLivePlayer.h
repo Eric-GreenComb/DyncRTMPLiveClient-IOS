@@ -15,7 +15,9 @@ typedef NS_ENUM(NSInteger,VideoShowMode){
     VideoShowModeCenter
 };
 @protocol DyncLivePlayerDelegate <NSObject>
-
+/**
+ *  播放开始
+ */
 - (void)onRtmpPlayerOK;
 
 - (void)onRtmpPlayerStatus:(int)cacheTime withBitrate:(int)curBitrate;

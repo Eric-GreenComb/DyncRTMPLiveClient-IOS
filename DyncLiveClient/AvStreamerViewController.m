@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UIButton *cameraButton;
 @property (nonatomic, strong) UIButton *closeButton;
 @property (nonatomic, strong) UIButton *startLiveButton;
+@property (nonatomic, strong) UILabel *stateLabel;
 
 @property (nonatomic, strong) DyncLivePublisher *app;
 @end
@@ -39,6 +40,8 @@
     [self.view addSubview:self.cameraButton];
     [self.view addSubview:self.beautyButton];
     [self.view addSubview:self.startLiveButton];
+    [self.view addSubview:self.stateLabel];
+    
     __weak typeof(self)weakSelf = self;
     [_closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(weakSelf.view.mas_right).offset(-20);
@@ -60,10 +63,14 @@
         make.width.equalTo(@[@(44)]);
         make.height.equalTo(@[@(44)]);
     }];
+    [_stateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.view.mas_left).offset(20);
+        make.bottom.equalTo(weakSelf.view.mas_bottom).offset(-20);
+        make.right.equalTo(weakSelf.view.mas_right).offset(-20);
+    }];
     //rtmp://192.168.7.207:1935/live1/room
     //rtmp://192.168.199.130:1935/live1/room
-    [_app startPublish:@"rtmp://192.168.7.207:1935/live1/room"];
-
+    [_app startPublish:@"rtmp://www.teameeting.cn/live/f001"];
 }
 
 - (void)closeButtonEvent:(UIButton*)sender {
@@ -114,26 +121,50 @@
     }
     return _beautyButton;
 }
-
+- (UILabel*)stateLabel {
+    if (!_stateLabel) {
+        _stateLabel = [UILabel new];
+        _stateLabel.text = @"未链接";
+        _stateLabel.textColor = [UIColor whiteColor];
+        _stateLabel.font = [UIFont systemFontOfSize:14];
+    }
+    return _stateLabel;
+}
 #pragma mark -  DyncLivePublisherDelegate
 - (void)OnStreamOk {
     NSLog(@"OnStreamOk");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _stateLabel.text = @"链接成功";
+    });
+    
 }
 
 - (void)OnStreamReconnecting:(int)times {
     NSLog(@"OnStreamReconnecting:%d",times);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _stateLabel.text = @"重连中...";
+    });
 }
 
 - (void)OnStreamFailed:(int)code {
-     NSLog(@"OnStreamFailed:%d",code);
+    NSLog(@"OnStreamFailed:%d",code);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _stateLabel.text = @"链接失败";
+    });
 }
 
 - (void)OnStreamClosed {
     NSLog(@"OnStreamClosed");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _stateLabel.text = @"关闭链接";
+    });
 }
 
 - (void)OnStreamStatus:(int)delayMs withNetBand:(int)netBand {
     NSLog(@"OnStreamStatus:%d withNetBand:%d",delayMs,netBand);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _stateLabel.text = [NSString stringWithFormat:@"链接成功，delayms:%d net:%d",delayMs,netBand];
+    });
 }
 
 
