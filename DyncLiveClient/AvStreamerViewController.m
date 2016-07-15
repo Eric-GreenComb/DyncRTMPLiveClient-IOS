@@ -70,7 +70,8 @@
     }];
     //rtmp://192.168.7.207:1935/live1/room
     //rtmp://192.168.199.130:1935/live1/room
-    [_app startPublish:@"rtmp://www.teameeting.cn/live/f001"];
+    [_app startPublish:@"rtmp://192.168.199.130:1935/live1/room"];
+    
 }
 
 - (void)closeButtonEvent:(UIButton*)sender {

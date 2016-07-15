@@ -9,16 +9,16 @@
 #import <Foundation/Foundation.h>
 /// 视频分辨率(都是16：9 当此设备不支持当前分辨率，自动降低一级)
 typedef NS_ENUM(NSUInteger, StreamingVideoSessionPreset){
-    /// 低分辨率 24帧 512码率
+    /// 低分辨率 24帧 384码率
     CaptureSessionPreset352x288 = 0,
     /// 中分辨率 24帧 512码率
     CaptureSessionPreset640x480_Low = 1,
     /// 中分辨率 24帧 768码率
-    CaptureSessionPreset640x480_Hight = 2,
-    /// 高分辨率 24帧 768码率
-    CaptureSessionPreset960x540_Low = 3,
-    /// 高分辨率 24帧 1024码率
-    CaptureSessionPreset960x540_Hight = 4,
+    CaptureSessionPreset640x480_Middle= 2,
+    /// 中分辨率 24帧 1024码率
+    CaptureSessionPreset640x480_Hight = 3,
+    /// 高分辨率 24帧 2048码率
+    CaptureSessionPreset1280x720 = 4,
     
 };
 typedef NS_ENUM(NSInteger, CaptureDevicePosition) {
