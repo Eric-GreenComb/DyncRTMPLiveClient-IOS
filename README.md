@@ -3,7 +3,7 @@ iOS 直播（网络自适应码率RTMP publisher）、点播播放器（播放�
 ##简介
 DyncRTMPLiveClient是为移动端应用量身打造的基于RTMP协议的流媒体直播系统。通过集成本SDK，只需几个简单API调用，便可实现一套完整的直播流媒体应用基础。包含了流媒体应用中：『采集->编码->传输->解码->播放』的所有步骤。</br>
 #更新预告</br>
-[基于RTMP协议的直播连线功能已上线](https://github.com/AnyRTC/RTMPCHybirdEngine-IOS)</br>
+[基于RTMP协议的直播连线功能已上线](https://github.com/AnyRTC/RTMPCHybirdEngine-IOS)请转到https://github.com/AnyRTC/RTMPCHybirdEngine-IOS</br>
 #优势</br>
 **超低延时**</br>
 **超低内存**</br>
