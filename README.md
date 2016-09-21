@@ -1,9 +1,9 @@
-#DyncRTMPLiveClient-IOS
+#DyncRTMPLiveClient-IOS    该项目不在维护，请迁移到开源项目[AnyRTC－RTMP](https://github.com/AnyRTC/AnyRTC-RTMP)
 iOS 直播（网络自适应码率RTMP publisher）、点播播放器（播放器经过专业优化，可实现秒开RTMP Player）
 ##简介
 DyncRTMPLiveClient是为移动端应用量身打造的基于RTMP协议的流媒体直播系统。通过集成本SDK，只需几个简单API调用，便可实现一套完整的直播流媒体应用基础。包含了流媒体应用中：『采集->编码->传输->解码->播放』的所有步骤。</br>
-#更新预告</br>
-**基于rtmp协议的直播连线功能即将上线**</br>
+#连麦直播</br>
+基于RTMP协议的直播连线功能已上线，请转到https://github.com/AnyRTC/RTMPCHybirdEngine-IOS</br>
 #优势</br>
 **超低延时**</br>
 **超低内存**</br>
@@ -53,7 +53,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准R
 ##商用授权
 程序发布需商用授权，业务咨询请联系
 QQ:984630262 </br>
-QQ交流群:6837127</br>
+QQ交流群:580477436</br>
 联系电话:021-65650071</br>
 Email:zhangjianqiang@dync.cc</br>
 ##关于直播
